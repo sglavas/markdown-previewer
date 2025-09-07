@@ -8,7 +8,6 @@ import './App.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import { useState } from 'react';
-import ReactDOM from "react-dom";
 
 import Editor from './components/Editor';
 import Previewer from './components/Previewer';
