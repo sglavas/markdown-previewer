@@ -7,7 +7,7 @@ import './index.css';
 import './App.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ReactDOM from "react-dom";
 
 import Editor from './components/Editor';
