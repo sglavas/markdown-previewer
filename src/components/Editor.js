@@ -3,9 +3,9 @@
  * @component
  * @module components/Editor
  * @param {Object} props - Component props
- * @param {string} props.text - Editor title displayed in the toolbar
  * @param {string} props.title - Current markdown text content in the textarea
- * @param {Function} propst.setText - useState setter function to update the text state
+ * @param {string} props.text - Editor title displayed in the toolbar
+ * @param {Function} props.setText - useState setter function to update the text state
  * @description Contains the toolbar with the full-screen button and the textarea input for editing.
 */
 function Editor ({title, text, setText}) {
