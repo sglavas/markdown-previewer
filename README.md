@@ -79,3 +79,12 @@ npm start
 - **bootstrap-icons**
 - **marked**
 - **highlight.js**
+
+---
+
+## Future Improvements
+* Add markdown sanitization
+* Add line numbers in editor
+* Word count and character display
+* Theme switcher
+* Export options (HTML, PDF, copy to clipboard)
