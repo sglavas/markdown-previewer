@@ -61,7 +61,7 @@ And here. | Okay. | I think we get it.
 /**
  * App component - Main component that contains the two other components of the app, Editor and Previewer
  * @component
- * @module components/QuoteBox
+ * @module App
  * @description Passes the text and setText hook to the Editor, passes the text variable to the Previewer
 */
 function App () {
