@@ -82,6 +82,16 @@ npm start
 
 ---
 
+## <span style="color: red;">Security Notice</span>
+
+**This application currently lacks HTML sanitization and is vulnerable to XSS attacks.**
+
+Do not deploy this without implementing proper security measures like DOMPurify.
+
+For local use only in trusted environments.
+
+---
+
 ## Future Improvements
 * Add markdown sanitization
 * Add line numbers in editor
