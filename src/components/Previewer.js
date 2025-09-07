@@ -7,8 +7,9 @@ import { marked } from 'marked';
  * Previewer component - Component for displaying the markdown
  * @component
  * @module components/Previewer
- * @param {string} title - The title in the toolbar, i.e. "Previewer"
- * @param {string} text - The text from the textarea in the Editor
+ * @param {Object} props - Component props
+ * @param {string} props.title - Previewer title displayed in the toolbar
+ * @param {string} props.text - Current markdown text from the textarea in the Editor
  * @description The first useEffect configures the marked() method
  * If the language is specified, it uses hljs.highlight() to optimize performance.
  * If not, it uses hljs.highlightAuto().
