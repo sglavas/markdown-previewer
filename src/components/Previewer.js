@@ -3,16 +3,18 @@ import 'highlight.js/styles/stackoverflow-light.css';
 import { useEffect } from 'react';
 import { marked } from 'marked';
 
-
-
 /**
- * App component - Main component that the two other components of the app, Editor and Previewer
+ * Previewer component - Component for displaying the markdown
  * @component
- * @module components/QuoteBox
- * @description Passes the text and setText hook to Editor, and it passes the text variable to the Previewer
+ * @module components/Previewer
+ * @param {string} title - The title in the toolbar, i.e. "Previewer"
+ * @param {string} text - The text from the textarea in the Editor
+ * @description The first useEffect configures the marked() method
+ * If the language is specified, it uses hljs.highlight() to optimize performance.
+ * If not, it uses hljs.highlightAuto().
+ * The second useEffect ensures that all the code in the Previewer is highlighted when text is updated.
 */
 function Previewer ({title, text}) {
-
   /**
    * useEffect: Configure marked settings
    * @effect
