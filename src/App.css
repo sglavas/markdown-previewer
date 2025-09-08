@@ -17,14 +17,7 @@
   min-height: 100vh;
 }
 
-.editor-wrapper{
-  margin-top: 2rem;
-  width: clamp(150px, 80vw, 600px);
-  resize: vertical;
-  position: relative;
-  box-shadow: 1px 1px 10px 2px #3a5f5f
-}
-
+/* Style both toolbars */
 .toolbar{
   background-color: var(--toolbar-color);
   padding: 1rem;
@@ -34,6 +27,18 @@
   font-weight: bold;
 }
 
+/* Style Editor wrapper */
+.editor-wrapper{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: clamp(150px, 80vw, 600px);
+  resize: vertical;
+  position: relative;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+}
+
+/* Style Editor body */
 #editor{
   box-sizing: border-box;
   padding: 1rem;
@@ -42,8 +47,17 @@
   width: 100%;
   background-color: var(--window-background-color);
   resize: vertical;
+  overflow: auto;
 }
 
+/* Style the resize handle */
+#editor::-webkit-resizer {
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent #4aa3a3 #4aa3a3 transparent;
+}
+
+/* Style Previewer wrapper */
 .previewer-wrapper{
   width: clamp(150px, 90vw, 800px);
   min-height: 200px;
@@ -51,6 +65,7 @@
   box-shadow: 1px 1px 10px 2px #3a5f5f;
 }
 
+/* Style Previewer body */
 .previewer-body{
   background-color: var(--window-background-color);
   height: auto;
@@ -58,23 +73,27 @@
   padding: 1rem;
 }
 
+/* Style Previewer h1 */
 .previewer-body h1{
   border-bottom: 2px solid var(--bottom-border-color);
   font-size: 2em;
   font-weight: bold;
 }
 
+/* Style Previewer h2 */
 .previewer-body h2{
   border-bottom: 1px solid var(--bottom-border-color);
   font-size: 1.5em;
   font-weight: bold;
 }
 
+/* Style Previewer h3 */
 .previewer-body h3{
   font-size: 1.17em;
   font-weight: bold;
 }
 
+/* Style tables inside Previewer */
 .previewer-body table{
   margin: 1rem 0;
 }
@@ -87,6 +106,7 @@
   padding: 0.5rem;
 }
 
+/* Make images fit inside Previewer */
 .previewer-body img{
   max-width: 100%;
   height: auto;

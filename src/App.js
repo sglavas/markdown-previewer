@@ -13,8 +13,7 @@ import Editor from './components/Editor';
 import Previewer from './components/Previewer';
 
 // Initial markdown that is processed on load
-const initialMarkdown = `
-# Welcome to my React Markdown Previewer!
+const initialMarkdown = `# Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
