@@ -1,3 +1,5 @@
+import { initialMarkdown } from './../App.js';
+
 /**
  * Editor component - Component for editing the markdown
  * @component
@@ -17,7 +19,26 @@ function Editor ({title, text, setText}) {
    * 
   */
   function handleChange(event) {
-  setText(event.target.value);
+    // Editor textarea
+    let textInput = document.getElementById("editor");
+    // Check if there are more than 10 000 characters in the editor
+    if(textInput.value.length > 10000){
+      // Display alert
+      alert("Too many characters in the Editor")
+      // Set text to initialMarkdown
+      setText(initialMarkdown);
+      return;
+    }
+
+    // Check if input is larger than 10 000 characters
+    if(event.target.value.length > 10000){
+      // Display alert
+      alert("Markdown too large.")
+      // Change input to empty string
+      event.target.value = "";
+      return;
+    }
+    setText(event.target.value);
   }
   
   return(
