@@ -12,15 +12,28 @@ A React-based Markdown Previewer that allows you to write Markdown text in an ed
 - XSS Protection: Built-in HTML sanitization using DOMPurify to prevent cross-site scripting attacks
 - Responsive Design: Works well on desktop and mobile devices
 - Bootstrap Styling: Clean, modern UI with Bootstrap components
+- Input Limits: Protective character limits to prevent abuse
 
 ---
 
 ## Security Implementation
-This application uses <a href="https://github.com/cure53/DOMPurify">DOMPurify</a> with a custom configuration to sanitize HTML output and prevents XSS attacks.
+This application implements multiple layers of security protection. It uses <a href="https://github.com/cure53/DOMPurify">DOMPurify</a> with a custom configuration to sanitize HTML output and prevents XSS attacks.
 
-* Allowed Tags: Only permits safe HTML tags necessary for Markdown rendering
+* Allowed Tags Whitelist: Only permits safe HTML tags necessary for Markdown rendering
 * Data Attribute Blocking: Prevents data-* attributes that could be used for attacks
 * Attribute Filtering: Restricts attributes to prevent malicious code execution
+
+---
+
+## Input Protection
+- Character Limit: Prevents denial-of-service attacks with 10,000 character limit
+- Input Validation: Real-time validation and automatic reset on excessive input
+- Automatic reset to initial state when limit exceeded
+- Tabnabbing Prevention: All external links automatically get
+
+```html
+target="_blank" rel="noopener noreferrer"
+```
 
 ---
 
@@ -115,3 +128,4 @@ npm start
 * Theme switcher
 * Export options (HTML, PDF, copy to clipboard)
 * Add local storage to save drafts
+* Add link validation
