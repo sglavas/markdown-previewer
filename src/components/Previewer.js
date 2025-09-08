@@ -2,6 +2,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/stackoverflow-light.css';
 import { useEffect } from 'react';
 import { marked } from 'marked';
+import sanitizeInput from './../utils/sanitize';
 
 /**
  * Previewer component - Component for displaying the markdown
@@ -69,7 +70,7 @@ function Previewer ({title, text}) {
         </button>
       </div>
       {/* Previewer body */}
-      <div className="previewer-body" dangerouslySetInnerHTML={{__html: marked(text)}}>
+      <div className="previewer-body" dangerouslySetInnerHTML={{__html: sanitizeInput(text)}}>
       </div>
     </div>
   )
