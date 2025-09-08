@@ -53,21 +53,11 @@ function Previewer ({title, text}) {
     hljs.highlightAll();
   }, [text]); // Runs whenever the markdown text updates
 
-  
-  function handleClick() {
-    document.getElementById("previewer-wrapper").requestFullscreen();
-  }
-
   return(
     <div className="previewer-wrapper" id="previewer-wrapper">
       {/* Previewer toolbar */}
       <div className="toolbar d-flex flex-row justify-content-between">
         {title}
-        {/* Full-screen button */}
-        <button className='btn btn-secondary btn-sm' onClick={handleClick}>
-          {/* Bootstrap icon - full screen */}
-          <i className='bi bi-arrows-fullscreen'></i>
-        </button>
       </div>
       {/* Previewer body */}
       <div className="previewer-body" dangerouslySetInnerHTML={{__html: sanitizeInput(text)}}>

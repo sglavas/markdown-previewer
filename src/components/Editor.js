@@ -19,28 +19,12 @@ function Editor ({title, text, setText}) {
   function handleChange(event) {
   setText(event.target.value);
   }
-
-  /**
-   * Display the Editor in full screen on click
-   * @function handleClick
-   * @param 
-   * @listens
-   * 
-  */
-  function handleClick() {
-    document.getElementById("editor-wrapper").requestFullscreen();
-  }
   
   return(
     <div className="editor-wrapper" id="editor-wrapper">
     {/* Editor toolbar */}
     <div className="toolbar d-flex flex-row justify-content-between">
       {title}
-      {/* Full-screen button */}
-      <button className='btn btn-secondary btn-sm' onClick={handleClick}>
-        {/* Bootstrap icon - full screen */}
-        <i className='bi bi-arrows-fullscreen'></i>
-      </button>
     </div>
       {/* The textarea input of the Editor component */}
       <textarea id="editor"
