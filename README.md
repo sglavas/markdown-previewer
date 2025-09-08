@@ -4,6 +4,8 @@
 
 A React-based Markdown Previewer that allows you to write Markdown text in an editor and instantly preview the rendered HTML. Supports GitHub-flavored Markdown (GFM), syntax highlighting for code blocks, and full-screen modes for both the editor and previewer.
 
+Feel free to check out the live <a href="https://cosmic-capybara-7646bf.netlify.app/">demo</a>.
+
 ---
 
 ## Features

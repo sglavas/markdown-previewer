@@ -48,10 +48,7 @@ And here. | Okay. | I think we get it.
 - And of course there are lists.
   - Some are bulleted.
      - With different indentation levels.
-        - That look like this.
-
-
-`;
+        - That look like this.`;
 
 
 //React:
