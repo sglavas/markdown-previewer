@@ -9,8 +9,31 @@ A React-based Markdown Previewer that allows you to write Markdown text in an ed
 ## Features
 - Real-time Preview: Instantly see your Markdown rendered as HTML as you type
 - Syntax Highlighting: Code blocks are highlighted with proper syntax coloring using Highlight.js
+- XSS Protection: Built-in HTML sanitization using DOMPurify to prevent cross-site scripting attacks
 - Responsive Design: Works well on desktop and mobile devices
 - Bootstrap Styling: Clean, modern UI with Bootstrap components
+
+---
+
+## Security Implementation
+This application uses <a href="https://github.com/cure53/DOMPurify">DOMPurify</a> with a custom configuration to sanitize HTML output and prevents XSS attacks.
+
+* Allowed Tags: Only permits safe HTML tags necessary for Markdown rendering
+* Data Attribute Blocking: Prevents data-* attributes that could be used for attacks
+* Attribute Filtering: Restricts attributes to prevent malicious code execution
+
+---
+
+## Security Testing
+The application includes protection against common XSS vectors
+
+```HTML
+<!-- These will be sanitized and made safe -->
+<script>alert('XSS')</script>
+<img src="x" onerror="alert(1)">
+<a href="javascript:alert(1)">Click me</a>
+<iframe src="javascript:alert(1)"></iframe>
+```
 
 ---
 
@@ -19,6 +42,7 @@ A React-based Markdown Previewer that allows you to write Markdown text in an ed
 - **Bootstrap**
 - **Marked**
 - **Highlight.js**
+- **DOMPurify**
 
 ---
 
@@ -26,6 +50,7 @@ A React-based Markdown Previewer that allows you to write Markdown text in an ed
 
 ```text
 
+.
 ├── package.json
 ├── package-lock.json
 ├── README.md
@@ -36,7 +61,9 @@ A React-based Markdown Previewer that allows you to write Markdown text in an ed
     │   ├── Editor.js
     │   └── Previewer.js
     ├── index.css
-    └── index.js
+    ├── index.js
+    └── utils
+        └── sanitize.js
 
 ```
 
@@ -82,19 +109,9 @@ npm start
 
 ---
 
-## <span style="color: red;">Security Notice</span>
-
-**This application currently lacks HTML sanitization and is vulnerable to XSS attacks.**
-
-Do not deploy this without implementing proper security measures like DOMPurify.
-
-For local use only in trusted environments.
-
----
-
 ## Future Improvements
-* Add markdown sanitization
 * Add line numbers in editor
 * Word count and character display
 * Theme switcher
 * Export options (HTML, PDF, copy to clipboard)
+* Add local storage to save drafts
